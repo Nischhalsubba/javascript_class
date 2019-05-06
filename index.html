@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <p id="target"></p>
+
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7];
+
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        console.log('---------------------------');
+
+        var arrName = ['Ram', 'Hari', "Nischhal", 'Kaushal', 'Bikesh'];
+
+        for (var i = 0; i < arrName.length; i++) {
+            console.log(arrName[i]);
+        }
+
+        console.log('----------------------');
+
+        var arrDel = ['Ram', 'Hari', "Nischhal", 'Kaushal', 'Bikesh'];
+
+        // var arrDel = arrDel.join(' ');
+
+        //typeof checks the type of variable
+        console.log(typeof arrDel);
+
+        console.log(arrDel);
+
+        console.log('--------------------------');
+
+        var store = arrDel.splice(1, 3);
+        console.log(store);
+
+
+        console.log('---------------------------');
+        // console.log(prompt('Input value here'));
+
+        //Filter function filters the data based on the calculation in the function
+        //It should evaluate either true or false
+        var filteredData = arrDel.filter(function (value, index) {
+            return value.length > 4;
+        });
+
+        var divisiable = arr.filter(function (value, index) {
+
+
+            // Checking the reminder wheather it's 0 or not
+            if (value % 2 == 0) {
+                console.log(value);
+            }
+
+            // return value % 2;
+        });
+
+
+
+        //Storing even number in the empty array
+        var emptyArr = [];
+
+        for (var i = 0; i < 100; i++) {
+            if (i % 2 == 0) {
+                emptyArr.push(i);
+            }
+
+        };
+
+        //Target
+        document.getElementById("target").innerHTML = "Text from Javascript";
+
+        //-----Second class------
+        var obj1 = {
+            name: "Ram",
+            lastName: "Smith",
+            fullName: function () {
+                return this.name + ' ' + this.lastName
+            }
+        };
+
+        var obj2 = {
+            name: "John",
+            lastName: "Doe",
+            age: "41",
+            fullName: function () {
+                return this.name + ' ' + this.lastName
+            }
+        };
+
+
+        //Manipulating an object
+        var parsedFullObject = {
+            //... is rest spread operator
+            ...obj2,
+            fullName: obj2.fullName()
+        };
+
+
+        //converting object into string
+        var objToString = JSON.stringify(obj1);
+
+        var someTextObject = '{"name":"shyam","lastName:":"smith"}';
+
+        //Parsing text to object
+        var parsedFromString = JSON.parse(someTextObject);
+
+        //Putting object in an array
+        var objs = [obj1, obj2];
+
+        var productInfo = {
+            title: "Hand Bag",
+            description: "Custom designed luxury handbag",
+            brand: "GUCCI"
+        };
+
+        var productManInfo = {
+            manufacturedBy: "China",
+            itemsUsed: ["leather", "cloth", "Metals"],
+            manufacturedYear: 2018
+        };
+
+        //Merging two Objects
+
+        //Using rest spead opreator
+        var fullProductDescription = {
+            ...productInfo,
+            ...productManInfo,
+            price: 20000,
+            expiryDate: '2019-02-10'
+        }
+
+        var extraObj = {
+            price: 555500,
+            expiryDate: '2019-03-10'
+        }
+
+
+        //Using object
+        var newObject = Object.assign(productInfo, productManInfo);
+
+        function tableFormat() {
+            let {
+                titile,
+                brand,
+                price
+            } = newObject;
+
+            return {
+                title,
+                brand,
+                price
+            }
+        }
+
+
+
+
+        // object.entries(obj1);
+        //Converting object into key valued arrays
+        var objToArray = Object.entries(newObject)
+
+        console.log(objToArray);
+
+        console.log(fullProductDescription);
+        // console.log(Object.entries(newObject));
+
+
+        objToArray.filter(function (value) {
+            if (value[0] == 'title' || value[0] == 'brand') {
+                return true;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

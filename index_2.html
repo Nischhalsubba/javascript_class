@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul id='list'>
+
+        <li>Loading....</li>
+
+    </ul>
+
+
+    <script>
+    var api_url='https://jsonplaceholder.typicode.com/photos';
+    
+    fetch(api_url)
+        .then((resp) => resp.json())
+        .then(function(data){
+            var list_data="";
+            for(i=0;i<=20;i++){
+                var d=data[i];
+                list_data+="<li>"+d.title+"<br><img src='"+d.thumbnailUrl+"' />"+"</li>";
+            }
+            document.getElementById('list').innerHTML=list_data;
+        });
+
+    </script>
+    
+</body>
+</html>
