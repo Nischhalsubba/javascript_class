@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Manipulations</title>
+    <style>
+        .container {
+            transition: 0.5s all linear;
+        }
+
+        .added {
+            background: #2f2f2f;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>
+            test this
+        </h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus sit inventore possimus animi
+            cupiditate, assumenda provident tenetur rem vero.
+        </p>
+
+        <button>
+            Click me
+        </button>
+    </div>
+
+    <div class="container" id="hover_me">
+        <h1>
+            test this
+        </h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi delectus sit inventore possimus animi
+            cupiditate, assumenda provident tenetur rem vero.
+        </p>
+
+        <button>
+            Click me
+        </button>
+    </div>
+
+
+
+
+    <script>
+        //DOM Manupulation
+        // -------------------------
+
+        //Fetch the first element with the class of the element
+        var container = document.querySelector(".container");
+
+
+        //Fetch all iteams matching the parameter
+        var containers = document.querySelectorAll(".container");
+
+        var button = document.querySelector("button");
+
+        container.onclick = function (e) {
+            var clickElement = e.srcElement;
+            clickedElement.style.backgroundColor = 'red';
+            clickedElement.style.color = 'white';
+
+            clickedElement.classList.toggle("added")
+            console.log("Classes", clickElement.classList)
+            console.log(e);
+        }
+
+        container.
+
+        containers.forEach(function (value, index) {
+            value.style.backgroundColor = 'green';
+            value.onclick = clickOnBox;
+        })
+
+        //Loop through all the containers and change their backgorund color
+        // And if it's clicked then change the color and background of clicked element
+        containers.forEach(function (value, index) {
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>

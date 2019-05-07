@@ -49,8 +49,21 @@ URL
 // after adding the files we add a commit message to let us know what we did
 // git commit -m "your message goes here" -> ADD commit message
 
-//WE add remote repository url to push our project to git stations(github/gitlab/gitbucket)\
-//
+
+//Originis the shortcut for getting the url
+//WE add remote repository url to push our project to git stations(github/gitlab/gitbucket)
+//git remote add origin url_for_remote_repo -> adds the remote link to origin variable
+
+// to list all the remote repository's urls
+// git remote -v 
+
+// To push the project to remote repository
+// / git push origin master -> master is the name of the branch that we want to pull tp local
+
+// to pull changes committed in remote repository
+// git pull
+
+
 
 
 
