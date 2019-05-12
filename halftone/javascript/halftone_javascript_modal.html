@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+</head>
+
+<style>
+    body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    button {
+        background: #000000;
+        color: #ffffff;
+        border: none;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .modal {
+        display: none;
+        width: 300px;
+        height: 400px;
+        background: grey;
+        /* transition: 0.5s; */
+    }
+
+    .modal .container {
+        padding: 20px;
+        position: relative;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    form input {
+        border: none;
+        height: 30px;
+        margin-bottom: 15px;
+    }
+
+    form button {
+        display: block;
+    }
+
+    .image {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    .close{
+        position: absolute;
+        right: 0;
+        font-size: 30px;
+        background: #ffffff;
+        padding: 5px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>Modal is down below</h1>
+        <button id="btn">
+            Modal
+        </button>
+    </div>
+
+    <div class="modal" id="login_modal">
+        <div class="container">
+            <span class="close" id="close">
+                &times;
+            </span>
+            <div class="image">
+                <img src="https://picsum.photos/id/237/200/300" alt="">
+            </div>
+
+            <form action="">
+                <input type="text" name="" id="" placeholder="username">
+                <input type="password" placeholder="password">
+                <button>Login</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <script src="./halftone_javascript_modal.js"></script>
+</body>
+
+</html>

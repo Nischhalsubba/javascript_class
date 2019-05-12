@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <style>
+        .body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .mouse {
+            width: 200px;
+            height: 200px;
+            background: #ededed;
+        }
+
+        .modal {
+            width: 600px;
+            height: 350px;
+            background-color: grey;
+            margin: auto;
+            display: none;
+        }
+
+        .displayblock {
+            display: block;
+        }
+
+        .accordion {
+            transition: 0.5s;
+        }
+
+        .panel {
+            display: none;
+            overflow: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <h1>Header</h1>
+    </header>
+    <div class="box">
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolores asperiores soluta expedita fugit
+            porro inventore enim at debitis qui?</p>
+        <button>Click here</button>
+    </div>
+    <div class="container">
+        <h1>Another title</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusantium libero blanditiis explicabo
+            adipisci soluta beatae id similique nulla aut.</p>
+        <button>View this page</button>
+    </div>
+
+    <div class="container">
+        <form action="">
+            <input type="text" placeholder="Enter information">
+        </form>
+    </div>
+
+    <div class="modal">
+        <h1>I am heading</h1>
+    </div>
+
+    <button id="modalBtn">
+        Modal
+    </button>
+
+    <div class="mouse">
+        <h1>Event</h1>
+    </div>
+    <div id="output">
+
+    </div>
+
+    <button class="accordion">
+        Read
+    </button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam obcaecati cumque optio nisi quod porro
+            dolores eum nostrum laudantium vitae.</p>
+    </div>
+
+    <button class="accordion">
+        Read
+    </button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam obcaecati cumque optio nisi quod porro
+            dolores eum nostrum laudantium vitae.</p>
+    </div>
+    <!-- <script src="./js/script.js"></script> -->
+
+    <script>
+        //document api on javascripts helps us to parse the html
+        // tree
+
+        var dynamicSelector = document.querySelector("#header h1");
+        var box = document.getElementsByClassName('box');
+        var heading = document.getElementById("header");
+        var output = document.getElementById("output");
+
+
+        var button = document.querySelector('button');
+        var secondButton = document.querySelectorAll('button')[1];
+
+        var textInput = document.querySelector('input[type="text"]')
+
+        function changeParentsBackground(e) {
+            console.log(e);
+            var clickedElement = e.srcElement;
+            //e => MouseEvent 
+            //e.target || e.srcElement => gives us the element that was clicked
+            clickedElement.parentElement.style.backgroundColor = 'red'
+        }
+
+        //Force method
+        function changeParentColor(e) {
+            //Too specific
+            button.parentElement.style.backgroundColor = "green"
+        }
+
+        // document.body.oncontextmenu = function (e) {
+        //     console.log(e);
+        //     console.log(e.type);
+        //     e.preventDefault();
+        //     button.style.padding = '20px'
+        // }
+
+        button.onclick = changeParentsBackground;
+        secondButton.onclick = changeParentsBackground;
+
+        button.ondblclick = function (e) {
+            console.log('Double clicked')
+        }
+
+        // Mouse Events
+
+        var mouseElement = document.querySelector('.mouse')
+
+        mouseElement.onmouseover = function (e) {
+            console.log(e, 'mouse over')
+            var eventElement = e.srcElement
+            if (eventElement) {
+                eventElement.children[0].innerText = "Mouse is over this element"
+            }
+            // e.target[0].inner
+        }
+
+        mouseElement.onmouseenter = function (e) {
+            console.log(e, 'mouse enter')
+            e.srcElement.children[0].innerText = "Mouse is entering this element"
+            // e.target[0].inner
+        }
+
+        mouseElement.onmouseleave = function (e) {
+            console.log(e, 'mouse leave')
+            e.srcElement.children[0].innerText = "Mouse is leaving this element"
+            // e.target[0].inner
+        }
+
+
+        //Keyboard
+        textInput.onkeyup = function (e) {
+            console.log(e)
+            var key = e.key;
+            dynamicSelector.innerText = e.srcElement.value
+            console.log(key);
+        }
+
+        // modal
+        var modelBtn = document.getElementById('modalBtn');
+
+        modalBtn.onclick = function (e) {
+            var modals = document.getElementsByClassName('modal');
+            console.log(modals)
+            modals[0].classList.add("displayblock")
+        }
+    </script>
+</body>
+
+</html>

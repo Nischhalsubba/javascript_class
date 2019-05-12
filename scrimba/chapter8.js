@@ -12,7 +12,7 @@ let example1 = 10
 
 console.log(example < example1)
 
-// == compare the value of the varaible
+// == compare the value of the varaible..
 // === compare the value and the data type of the varaibl
 
 console.log(example == example1)
@@ -29,3 +29,7 @@ console.log(example2)
 console.log(example3)
 console.log(example4)
 console.log(example5)
+
+
+// hankooksarang.com.np
+//
