@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modal</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900" rel="stylesheet">
 </head>
 
 <style>
@@ -59,12 +60,50 @@
         margin-bottom: 15px;
     }
 
-    .close{
+    .close {
         position: absolute;
         right: 0;
         font-size: 30px;
         background: #ffffff;
         padding: 5px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .calculator {
+        width: 500px;
+        height: 275px;
+        margin: auto;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1rem;
+    }
+
+    .display {
+        border: 1px solid black;
+        height: 50px;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        text-align: right;
+        padding-right: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .calculator button {
+        transition: 0.2s all linear;
+    }
+
+    .calculator button:hover {
+        background: dimgrey;
+        color: white;
+        font-weight: bold;
     }
 </style>
 
@@ -95,6 +134,38 @@
 
         </div>
     </div>
+
+    <h1>Calculator</h1>
+
+    <div class="calculator">
+        <div class="display" id="display">
+            123
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="numbers" value="1">1</button>
+            <button type="button" class="numbers" value="2">2</button>
+            <button type="button" class="numbers" value="3">3</button>
+            <button type="button" class="numbers" value="4">4</button>
+
+            <button type="button" class="numbers" value="5">5</button>
+            <button type="button" class="numbers" value="6">6</button>
+            <button type="button" class="numbers" value="7">7</button>
+            <button type="button" class="numbers" value="8">8</button>
+
+            <button type="button" class="numbers" value="9">9</button>
+            <button type="button" class="numbers" value="0">0</button>
+            <button type="button" class="operators" value="-">-</button>
+            <button type="button" class="operators" value="+">+</button>
+
+
+            <button type="button" class="operators" value="*">*</button>
+            <button type="button" class="operators" value="/">/</button>
+            <button type="button" class="operators">AC</button>
+            <button type="equals" class="equals">=</button>
+        </div>
+    </div>
+
 
 
     <script src="./halftone_javascript_modal.js"></script>
