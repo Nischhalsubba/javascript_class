@@ -1,0 +1,12 @@
+{
+  "name": "javascript-class-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runnable beginner examples for JavaScript classes, inheritance, encapsulation, validation, and polymorphism.",
+  "author": "Nischhal Raj Subba",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js"
+  }
+}
