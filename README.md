@@ -1,50 +1,55 @@
-<div align="center">
-
 # JavaScript Class Practice
 
-### JavaScript OOP Learning Repo
+A small, runnable learning repository for JavaScript classes and object-oriented programming fundamentals.
 
-**A small practice repo for JavaScript classes, constructors, methods, `this`, instances, inheritance, and beginner object-oriented programming concepts.**
+## Included examples
 
-![JavaScript](https://img.shields.io/badge/JavaScript-Classes-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)
-![OOP](https://img.shields.io/badge/Focus-OOP%20Basics-7C3AED?style=for-the-badge)
+- constructor validation
+- instance methods
+- inheritance with `extends`
+- parent initialization with `super()`
+- method overriding
+- private class fields
+- getters
+- encapsulated validation
+- polymorphism through a shared `area()` method
+- CommonJS exports for reuse
 
-</div>
+## Classes
 
----
-
-## ✨ Overview
-
-**javascript_class** is a learning repository for practicing JavaScript class syntax and object-oriented programming basics.
-
----
-
-## 🎯 Practice Topics
-
-| Topic | Goal |
+| Class | Purpose |
 |---|---|
-| Class syntax | Create reusable object blueprints |
-| Constructor | Initialize values |
-| Methods | Add behavior to objects |
-| `this` | Understand object context |
-| Instances | Create multiple objects from one class |
-| Inheritance | Extend one class from another |
+| `User` | Basic class with validated constructor values |
+| `Student` | Extends `User` and overrides `describe()` |
+| `BankAccount` | Demonstrates private state, deposits, withdrawals, and validation |
+| `Shape` | Base class defining a shared method contract |
+| `Circle` | Implements shape-specific area calculation |
+| `Rectangle` | Implements another area calculation using the same interface |
 
----
+## Run locally
 
-## ✅ Suggested Exercises
+Requirements:
 
-- [ ] `User` class
-- [ ] `Product` class
-- [ ] `Student` class
-- [ ] `BankAccount` class
-- [ ] `TodoItem` class
-- [ ] `Shape`, `Circle`, and `Rectangle` classes
+- Node.js 18 or newer recommended
 
----
+Run the examples:
 
-<div align="center">
+```bash
+npm start
+```
 
-A small practice space for learning JavaScript classes clearly.
+Check JavaScript syntax:
 
-</div>
+```bash
+npm run check
+```
+
+No dependencies are required.
+
+## Learning notes
+
+The examples intentionally include input validation and error handling rather than demonstrating only the happy path. Modify the values in `runExamples()` or import the exported classes into another file for additional practice.
+
+## Status
+
+This is a focused learning repository, not a production application.
