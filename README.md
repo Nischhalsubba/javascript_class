@@ -61,3 +61,8 @@ Use accurate topic terms such as **JavaScript class notes, JavaScript lessons, J
 flowchart LR
     TOPIC["Lesson topic"] --> EXAMPLE["Example / exercise"] --> VERIFY["Verify behavior"] --> DOCS["Improve explanation"] --> PR["Pull request"]
 ```
+
+
+## GitHub Pages and root-level examples
+
+The original `study/` lessons, HTML demos, and JavaScript practice files now live at repository root. Open `index.html` for the original exercise page; `index_2.html` and `indexgit.html` remain separate examples. Set **Settings → Pages → Deploy from a branch → master → / (root)** to publish the exercise pages. Run `npm run check` to verify the main JavaScript entry point; GitHub Actions also syntax-checks all JavaScript examples. The original learning workspace README is retained under `docs/legacy-study-readme.md`.

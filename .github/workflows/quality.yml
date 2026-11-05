@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: study
+        working-directory: .
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -22,5 +22,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Verify example entry points
+        run: test -f index.html && test -f index_2.html && test -f indexgit.html && test -f package.json
       - name: Check JavaScript syntax
-        run: find . -name '*.js' -type f -print0 | xargs -0 -n1 node --check
+        run: find . -name '*.js' -type f -print0 | xargs -0 -r -n1 node --check
