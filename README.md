@@ -66,3 +66,7 @@ flowchart LR
 ## GitHub Pages and root-level examples
 
 The original `study/` lessons, HTML demos, and JavaScript practice files now live at repository root. Open `index.html` for the original exercise page; `index_2.html` and `indexgit.html` remain separate examples. Set **Settings → Pages → Deploy from a branch → master → / (root)** to publish the exercise pages. Run `npm run check` to verify the main JavaScript entry point; GitHub Actions also syntax-checks all JavaScript examples. The original learning workspace README is retained under `docs/legacy-study-readme.md`.
+
+## Verification and review practice
+
+Use the [project-specific validation guide](docs/LESSON_VERIFICATION.md) to document testing, limitations and rollback for future lessons or interface changes.
